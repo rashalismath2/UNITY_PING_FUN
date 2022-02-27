@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PongFun.unity
     guid: 79a757aa4bad80343a143d8cd566155f
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 445bab576a9b99b4ca639e54f4294368
   m_configObjects: {}

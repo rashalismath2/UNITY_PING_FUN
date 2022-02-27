@@ -6,8 +6,7 @@ public class BoalMovement : MonoBehaviour
 {
     [SerializeField]
     private float startSpeed=5f;
-    [SerializeField]
-    private float startDirection = 1f;
+
     [HideInInspector]
     public float racketSpeed=1f;
     private Rigidbody2D rigidBody;
@@ -18,20 +17,23 @@ public class BoalMovement : MonoBehaviour
     }
     void Start()
     {
-        StartCoroutine(Launch());
+        StartCoroutine(Launch(1));
     }
 
     // Update is called once per frame
-    void Update()
+    public void Restart(int direction)
     {
-        
+        rigidBody.velocity = new Vector2(0f,0f);
+        transform.position = new Vector2(0f,0f);
+        racketSpeed = 1f;
+        StartCoroutine(Launch(direction));
     }
 
-    IEnumerator Launch() {
-
+    IEnumerator Launch(int direction) {
+        
         yield return new WaitForSeconds(2);
 
-        MoveBall(new Vector2(startDirection,0));
+        MoveBall(new Vector2(direction, 0));
     }
 
     void MoveBall(Vector2 direction) {
