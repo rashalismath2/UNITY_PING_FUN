@@ -11,10 +11,14 @@ public class ChangeScene : MonoBehaviour
         SceneManager.LoadScene(scneId);
     
     }
+    public void MoveToGame()
+    {
+        SceneManager.LoadScene((int)Screens.PongFun);
+
+    }
     public void Exit()
     {
         Application.Quit();
-
     }
 
     // Start is called before the first frame update
